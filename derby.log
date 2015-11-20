@@ -1,0 +1,20 @@
+Fri Nov 20 10:46:13 EST 2015 : Apache Derby Network Server - 10.10.2.0 - (1582446) started and ready to accept connections on port 1527
+----------------------------------------------------------------
+Fri Nov 20 10:46:14 EST 2015:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-0151-2593-1088-00004fc4f604 
+on database directory /Users/sabo/NetBeansProjects/WebApplication1/HW3DB with class loader sun.misc.Launcher$AppClassLoader@5451c3a8 
+Loaded from file:/Applications/NetBeans/glassfish-4.1/javadb/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_31-b13
+user.dir=/Applications/NetBeans/glassfish-4.1/javadb
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.11.1
+derby.system.home=/Users/sabo/NetBeansProjects/WebApplication1
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Fri Nov 20 11:44:32 EST 2015: Shutting down Derby engine
+----------------------------------------------------------------
+Fri Nov 20 11:44:32 EST 2015:
+Shutting down instance a816c00e-0151-2593-1088-00004fc4f604 on database directory /Users/sabo/NetBeansProjects/WebApplication1/HW3DB with class loader sun.misc.Launcher$AppClassLoader@5451c3a8 
+----------------------------------------------------------------

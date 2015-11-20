@@ -1,16 +1,37 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Animal Search</title>
     </h:head>
     <h:body>
+        Search for animal within price range: 
         <h:form>
-            First Name<h:inputText label="First Name" value="#{User.firstName}" required="true"></h:inputText>
-            <br/>
-            Last Name<h:inputText label="First Name" value="#{User.lastName}" required="true"></h:inputText>
-            <h:commandButton action="#{UserJpaController.create}" value="Submit"></h:commandButton>
+            <h:inputText id="id" value=""></h:inputText>
+            <f:ajax render=""></f:ajax>
+            <h:dataTable cellspacing="2" cellpadding="2" border="3" var="animal" value="#{animalsController.animalsLike}">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Name" />
+                    </f:facet> 
+                    <h:outputText value="#{animal.animalname}" ></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Species" />
+                    </f:facet> 
+                    <h:outputText value="#{animal.animaltype}" ></h:outputText>
+                </h:column> 
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Name" />
+                    </f:facet> 
+                    <h:outputText value="#{animal.price}" ></h:outputText>
+                </h:column>
+            </h:dataTable>
         </h:form>
     </h:body>
 </html>
+
