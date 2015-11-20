@@ -7,11 +7,12 @@
         <title>Animal Search</title>
     </h:head>
     <h:body>
-        Search for animal within price range: 
+        Search for a type of animal: 
         <h:form>
-            <h:inputText id="id" value=""></h:inputText>
-            <f:ajax render=""></f:ajax>
-            <h:dataTable cellspacing="2" cellpadding="2" border="3" var="animal" value="#{animalsController.animalsLike}">
+            <h:inputText id="typeSearch" value="#{animals.animaltype}">
+                <f:ajax render="datatable" event="keyup" />
+            </h:inputText>
+            <h:dataTable id="datatable" cellspacing="2" cellpadding="2" border="3" var="animal" value="#{animalsController.animalsLike}">
                 <h:column>
                     <f:facet name="header">
                         <h:outputText value="Name" />

@@ -28,7 +28,6 @@ import javax.persistence.Query;
 import javax.transaction.UserTransaction;
 
 @ManagedBean(name = "animalsController")
-@SessionScoped
 public class AnimalsController implements Serializable {
 
     private Animals current;
@@ -52,7 +51,7 @@ public class AnimalsController implements Serializable {
         try {
             utx.begin();
             EntityManager entityManager = emf.createEntityManager();
-            entityManager.persist(getAnimal());
+            entityManager.persist(getAnimals());
             utx.commit();
             entityManager.close();
             returnValue = "animalSaved";
@@ -62,21 +61,25 @@ public class AnimalsController implements Serializable {
         return returnValue;
     }
     
-    public Animals getAnimal() {
+    public Animals getAnimals() {
         return animals;
     }
     
-    public List animalsLike()
+    public void setAnimals( Animals a ) {
+        this.animals = a;
+    }
+    
+    public List getAnimalsLike()
     {
         List<Animals> list=new ArrayList();
-        EntityManager em= emf.createEntityManager();
-        String sql="Select a from Animals a where a.AnimalType like :name";
+        EntityManager em = emf.createEntityManager();
+        String sql="Select a from Animals a where upper(a.animaltype) like :type";
          try {
             Query selectQuery = em.createQuery(sql);
-            selectQuery.setParameter("name", current.getAnimaltype() + "%");
+            selectQuery.setParameter("type", "%" + animals.getAnimaltype().toUpperCase() + "%");
             list = selectQuery.getResultList();
         } catch (Exception e) {
-           // e.printStackTrace();
+           //e.printStackTrace();
         }
         return list;       
     }

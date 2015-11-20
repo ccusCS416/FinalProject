@@ -3,7 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/sabo/NetBeansProjects/WebApplication1/web/index.xhtml</file>
+            <file>file:/home/reddevild271/Desktop/CS416/FinalProject/FinalProject/src/java/edu/ccsu/model/Animals.java</file>
+            <file>file:/home/reddevild271/Desktop/CS416/FinalProject/FinalProject/web/addAnimal.xhtml</file>
+            <file>file:/home/reddevild271/Desktop/CS416/FinalProject/FinalProject/web/addCustomer.xhtml</file>
+            <file>file:/home/reddevild271/Desktop/CS416/FinalProject/FinalProject/src/java/edu/ccsu/controller/AnimalsController.java</file>
+            <file>file:/home/reddevild271/Desktop/CS416/FinalProject/FinalProject/web/index.xhtml</file>
+            <file>file:/home/reddevild271/Desktop/CS416/FinalProject/FinalProject/src/java/edu/ccsu/validators/SpeciesValidator.java</file>
+            <file>file:/home/reddevild271/Desktop/CS416/FinalProject/FinalProject/src/java/edu/ccsu/controller/CustomerControllerSoIn.java</file>
         </group>
     </open-files>
 </project-private>

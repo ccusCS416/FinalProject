@@ -21,7 +21,7 @@ public class SpeciesValidator implements Validator{
     public void validate(FacesContext context, UIComponent component, Object value) throws ValidatorException {
         String species = (String)value;
         HtmlInputText htmlInputText = (HtmlInputText)component;
-        if (species.equals("Human") || species.equals("human"))
+        if (species.toUpperCase().equals("HUMAN"))
         {
             FacesMessage facesMessage =  new FacesMessage(htmlInputText.getLabel()+": cannot sell humans");
             throw new ValidatorException(facesMessage);
