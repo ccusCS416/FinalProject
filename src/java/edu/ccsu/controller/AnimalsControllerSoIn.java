@@ -55,7 +55,7 @@ public class AnimalsControllerSoIn {    @PersistenceUnit(unitName = "WebApplicat
         }
         return returnValue;
     }
-
+   
     /**
      * @return the customer
      */

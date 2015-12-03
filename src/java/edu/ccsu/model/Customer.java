@@ -6,6 +6,7 @@
 package edu.ccsu.model;
 
 import java.io.Serializable;
+import java.util.Set;
 import javax.faces.bean.ManagedBean;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -14,6 +15,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -50,6 +52,17 @@ public class Customer implements Serializable {
     @Size(min = 1, max = 255)
     @Column(name = "LASTNAME")
     private String lastname;
+    @OneToMany(mappedBy="customer")
+    private Set<Animals>animals;
+
+    public Set<Animals> getAnimals() {
+        return animals;
+    }
+
+    public void setAnimals(Set<Animals> animals) {
+        this.animals = animals;
+    }
+      
 
     public Customer() {
     }

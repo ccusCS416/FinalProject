@@ -58,6 +58,16 @@ public class CustomerControllerSoIn {
         }
         return returnValue;
     }
+    
+    public String addToCart(){
+        String returnValue = "error";
+        try{
+            returnValue = "Cart";
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return returnValue;
+    }
 
     /**
      * @return the customer
