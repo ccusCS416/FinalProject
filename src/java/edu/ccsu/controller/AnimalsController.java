@@ -84,6 +84,20 @@ public class AnimalsController implements Serializable {
         return list;       
     }
     
+    public List getAllAnimals()
+    {
+        List<Animals> list=new ArrayList();
+        EntityManager em = emf.createEntityManager();
+        String sql="Select * FROM Animals";
+         try {
+             Query query = em.createQuery("Select c from Animals c");
+             list = query.getResultList();
+        } catch (Exception e) {
+           //e.printStackTrace();
+        }
+        return list;       
+    }
+    
     public Animals getSelected() {
         if (current == null) {
             current = new Animals();

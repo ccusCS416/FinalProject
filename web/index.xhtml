@@ -4,38 +4,44 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Animal Search</title>
+        <title>Facelet Title</title>
     </h:head>
     <h:body>
-        Search for a type of animal: 
+        Welcome to DefinitelyLegalPets.com
+        <br/>
         <h:form>
-            <h:inputText id="typeSearch" value="#{animals.animaltype}">
-                <f:ajax render="datatable" event="keyup" />
-            </h:inputText>
-            <h:dataTable id="datatable" cellspacing="2" cellpadding="2" border="3" var="animal" value="#{animalsController.animalsLike}">
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="Name" />
-                    </f:facet> 
-                    <h:outputText value="#{animal.animalname}" ></h:outputText>
-                </h:column>
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="Species" />
-                    </f:facet> 
-                    <h:outputText value="#{animal.animaltype}" ></h:outputText>
-                </h:column> 
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="Name" />
-                    </f:facet> 
-                    <h:outputText value="#{animal.price}" ></h:outputText>
-                </h:column>
-            </h:dataTable>
+        <h:dataTable id="datatable" cellspacing="2" cellpadding="2" border="3" var="animal" value="#{animalsController.allAnimals}">
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Name" />
+                </f:facet> 
+                <h:outputText value="#{animal.animalname}" ></h:outputText>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Species" />
+                </f:facet> 
+                <h:outputText value="#{animal.animaltype}" ></h:outputText>
+            </h:column> 
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Price" />
+                </f:facet> 
+                <h:outputText value="#{animal.price}" ></h:outputText>
+            </h:column>
+            <h:column>
+                <h:selectManyCheckbox value="#{customerControllerSoIn.selectedItems}">
+                    <f:selectItems itemValue="#{animals.id}"/>
+                </h:selectManyCheckbox>
+            </h:column>
+        </h:dataTable>
+            <h:commandButton action="#{customerControllerSoIn.addToCart()}" value="Checkout"></h:commandButton>
         </h:form>
         <h:link outcome="addAnimal.xhtml" value='Add a new animal'></h:link>
         <br />
         <h:link outcome="addCustomer.xhtml" value='Add a new user'></h:link>
+        <br/>
+        <h:link outcome="search.xhtml" value='Search'></h:link>
     </h:body>
 </html>
 

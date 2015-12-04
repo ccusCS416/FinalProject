@@ -5,8 +5,8 @@
  */
 package edu.ccsu.controller;
 
+import edu.ccsu.model.Animals;
 import edu.ccsu.model.Customer;
-import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Resource;
 import javax.faces.bean.ManagedBean;
@@ -14,7 +14,6 @@ import javax.faces.bean.ManagedProperty;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceUnit;
-import javax.persistence.Query;
 import javax.transaction.UserTransaction;
 
 /**
@@ -29,7 +28,18 @@ public class CustomerControllerSoIn {
     private UserTransaction userTransaction;
     @ManagedProperty(value = "#{customer}")
     private Customer customer;
+    
+    private List<Animals> selectedItems;
 
+
+    public List<Animals> getSelectedItems() {
+        return selectedItems;
+    }
+
+    public void setSelectedItems(List<Animals> selectedItems) {
+        this.selectedItems = selectedItems;
+    }
+    
     public String saveCustomer() {
         String returnValue = "error";
         try {
@@ -54,6 +64,17 @@ public class CustomerControllerSoIn {
             userTransaction.commit();
             returnValue = "deleteSuccessful";
         } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return returnValue;
+    }
+    
+    public String addToCart(){
+        String returnValue = "error";
+        try{
+            Animals test = selectedItems.get(0);
+            returnValue = "Cart";
+        } catch (Exception e){
             e.printStackTrace();
         }
         return returnValue;
@@ -83,4 +104,5 @@ public class CustomerControllerSoIn {
     public void setInitial(String initial) {
         this.initial = initial;
     }
+    
 }

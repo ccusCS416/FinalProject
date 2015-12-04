@@ -42,6 +42,10 @@ public class AnimalsJpaController implements Serializable {
     private UserTransaction utx;
     @PersistenceUnit(unitName="WebApplication1PU")
     private EntityManagerFactory emf = null;
+
+    AnimalsJpaController() {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
