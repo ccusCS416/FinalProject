@@ -7,6 +7,7 @@ package edu.ccsu.model;
 
 import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -29,6 +30,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @ManagedBean
 @Table(name = "ANIMALS")
 @XmlRootElement
+@RequestScoped
 @NamedQueries({
     @NamedQuery(name = "Animals.findAll", query = "SELECT a FROM Animals a"),
     @NamedQuery(name = "Animals.findById", query = "SELECT a FROM Animals a WHERE a.id = :id"),
@@ -55,6 +57,14 @@ public class Animals implements Serializable {
     @JoinColumn(name="customerId")
     private Customer customer;
 
+    public String isDog()
+    {
+        if (this.animaltype.equals("Dog"))
+            return "yes";
+        else
+            return "no";
+    }
+    
     public Customer getCustomer() {
         return customer;
     }

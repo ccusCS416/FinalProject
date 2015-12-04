@@ -8,8 +8,10 @@
     </h:head>
     <h:body>
         Welcome to DefinitelyLegalPets.com
-        <br/>
+        <br/><br/><br/>
         <h:form>
+                    Enter your shipping address: <h:inputText/>
+                <br/>            
         <h:dataTable id="datatable" cellspacing="2" cellpadding="2" border="3" var="animal" value="#{animalsController.allAnimals}">
             <h:column>
                 <f:facet name="header">
@@ -25,12 +27,12 @@
             </h:column> 
             <h:column>
                 <f:facet name="header">
-                    <h:outputText value="Name" />
+                    <h:outputText value="Price" />
                 </f:facet> 
                 <h:outputText value="#{animal.price}" ></h:outputText>
             </h:column>
             <h:column>
-                <h:selectBooleanCheckbox value="false"></h:selectBooleanCheckbox>
+                <h:commandButton value="buy" action="#{animal.isDog()}"></h:commandButton>
             </h:column>
         </h:dataTable>
             <h:commandButton action="#{customerControllerSoIn.addToCart()}" value="Checkout"></h:commandButton>

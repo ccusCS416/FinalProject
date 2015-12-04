@@ -6,7 +6,20 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        Hello from Facelets
+         <h:dataTable id="datatable" cellspacing="2" cellpadding="2" border="3" var="animal" value="#{customerControllerSoIn.selectedItems}">
+            <h:column>
+                Name: 
+                <h:outputText value="#{animal.animalname}" ></h:outputText>
+            </h:column>
+            <h:column>
+                Species:
+                <h:outputText value="#{animal.animaltype}" ></h:outputText>
+            </h:column> 
+            <h:column>
+                Price:
+                <h:outputText value="#{animal.price}" ></h:outputText>
+            </h:column>
+        </h:dataTable>
     </h:body>
 </html>
 

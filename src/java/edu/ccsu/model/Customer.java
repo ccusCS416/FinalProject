@@ -6,8 +6,10 @@
 package edu.ccsu.model;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -29,6 +31,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @ManagedBean
 @Table(name = "CUSTOMER")
 @XmlRootElement
+@SessionScoped
 @NamedQueries({
     @NamedQuery(name = "Customer.findAll", query = "SELECT c FROM Customer c"),
     @NamedQuery(name = "Customer.findById", query = "SELECT c FROM Customer c WHERE c.id = :id"),
@@ -125,5 +128,6 @@ public class Customer implements Serializable {
     public String toString() {
         return "edu.ccsu.model.Customer[ id=" + id + " ]";
     }
+    
     
 }

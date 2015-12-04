@@ -6,6 +6,7 @@
 package edu.ccsu.controller;
 
 import edu.ccsu.model.Customer;
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Resource;
@@ -29,6 +30,16 @@ public class CustomerControllerSoIn {
     private UserTransaction userTransaction;
     @ManagedProperty(value = "#{customer}")
     private Customer customer;
+    
+    private List<Integer> selectedItems;
+
+    public List<Integer> getSelectedItems() {
+        return selectedItems;
+    }
+
+    public void setSelectedItems(List<Integer> selectedItems) {
+        this.selectedItems = selectedItems;
+    }
 
     public String saveCustomer() {
         String returnValue = "error";
@@ -93,4 +104,5 @@ public class CustomerControllerSoIn {
     public void setInitial(String initial) {
         this.initial = initial;
     }
+    
 }

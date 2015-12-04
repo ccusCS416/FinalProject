@@ -9,4 +9,54 @@
             <var>bundle</var>
         </resource-bundle>
     </application>
+    
+    <navigation-rule>
+        <from-view-id>index.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>yes</from-outcome>
+            <to-view-id>noDogs.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>no</from-outcome>
+            <to-view-id>thanks.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+        <navigation-rule>
+        <from-view-id>noDogs.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>deleteSuccessful</from-outcome>
+            <to-view-id>index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>error</from-outcome>
+            <to-view-id>error.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+            <navigation-rule>
+        <from-view-id>noDogs.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>deleteSuccessful</from-outcome>
+            <to-view-id>index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>error</from-outcome>
+            <to-view-id>error.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    
+            <navigation-rule>
+        <from-view-id>thanks.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>deleteSuccessful</from-outcome>
+            <to-view-id>index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>error</from-outcome>
+            <to-view-id>error.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
 </faces-config>
